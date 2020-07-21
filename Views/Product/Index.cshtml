@@ -1,0 +1,62 @@
+﻿@model IEnumerable<BusinessLayer.Products>
+
+@{
+    ViewBag.Title = "Index";
+    Layout=null;
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New Product", "Create")<br />
+    @Html.ActionLink("List of Manufacturer", "Index","Manufacturer")<br />
+    @Html.ActionLink("Categories", "Index","Category")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ManufacturerName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    using (Html.BeginForm("Delete", "Product", new { id = item.ProductID }))
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ManufacturerName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ProductID }) |
+           <input type="submit" value="Delete product" onclick="return confirm('Are you sure that you want to delete @item.ProductName' )" />
+        </td>
+    </tr>
+    }
+}
+
+</table>

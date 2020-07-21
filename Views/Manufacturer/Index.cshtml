@@ -1,0 +1,58 @@
+﻿@model IEnumerable<AccessLayer.Manufacturers>
+
+@{
+    ViewBag.Title = "Manufacturer List";
+    Layout = null;
+
+}
+
+    <h2>Manufacturer List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ManufacturerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.yoe)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        using (Html.BeginForm("Delete", "Manufacturer", new { id = item.ManufacturerID }))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ManufacturerID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.yoe)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ManufacturerID }) |
+                    <input type="submit" value="Delete Manufacturer" onclick="return confirm('Are you sure that you want to delete @item.CompanyName')" />
+                </td>
+            </tr>
+        }
+    }
+
+    @Html.ActionLink("Back to product List","Index","Product")
+
+</table>
