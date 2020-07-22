@@ -138,10 +138,12 @@
     <Content Include="Content\css\fontawesome-all.min.css" />
     <Content Include="Content\css\magnific-popup.css" />
     <Content Include="Content\css\tooplate-style.css" />
+    <Content Include="Content\img\about.jpg" />
     <Content Include="Content\img\constructive_bg_01.jpg" />
     <Content Include="Content\img\constructive_bg_02.jpg" />
     <Content Include="Content\img\constructive_bg_03.jpg" />
     <Content Include="Content\img\constructive_bg_04.jpg" />
+    <Content Include="Content\img\download.jpg" />
     <Content Include="Content\img\gallery-img-01-tn.jpg" />
     <Content Include="Content\img\gallery-img-01.jpg" />
     <Content Include="Content\img\gallery-img-02-tn.jpg" />
@@ -154,6 +156,8 @@
     <Content Include="Content\img\gallery-img-05.jpg" />
     <Content Include="Content\img\gallery-img-06-tn.jpg" />
     <Content Include="Content\img\gallery-img-06.jpg" />
+    <Content Include="Content\img\IoT-in-Manufacturer-550x350.jpg" />
+    <Content Include="Content\img\manufacturer.jpg" />
     <Content Include="Content\img\nav-item-highlight.png" />
     <Content Include="Content\img\nav-item.png" />
     <Content Include="Content\img\Screenshot %28524%29.png" />

@@ -2,15 +2,13 @@
 
 @{
     ViewBag.Title = "Manufacturer List";
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 
 }
-
+        
     <h2>Manufacturer List</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
@@ -49,10 +47,14 @@
                     @Html.ActionLink("Edit", "Edit", new { id = item.ManufacturerID }) |
                     <input type="submit" value="Delete Manufacturer" onclick="return confirm('Are you sure that you want to delete @item.CompanyName')" />
                 </td>
+                <td>
+                    @Html.ActionLink("Create New", "Create")
+
+                </td>
             </tr>
         }
     }
 
-    @Html.ActionLink("Back to product List","Index","Product")
+    @Html.ActionLink("Back to list","IndexU","Home")
 
 </table>

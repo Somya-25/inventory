@@ -2,16 +2,14 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout=null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New Product", "Create")<br />
-    @Html.ActionLink("List of Manufacturer", "Index","Manufacturer")<br />
-    @Html.ActionLink("Categories", "Index","Category")
-</p>
+
+    
+    
 <table class="table">
     <tr>
         <th>
@@ -32,31 +30,36 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    using (Html.BeginForm("Delete", "Product", new { id = item.ProductID }))
+    @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProductID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProductName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CategoryName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ManufacturerName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.ProductID }) |
-           <input type="submit" value="Delete product" onclick="return confirm('Are you sure that you want to delete @item.ProductName' )" />
-        </td>
-    </tr>
+        using (Html.BeginForm("Delete", "Product", new { id = item.ProductID }))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ManufacturerName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ProductID }) |
+                    <input type="submit" value="Delete product" onclick="return confirm('Are you sure that you want to delete @item.ProductName' )" />
+                </td>
+                <td>
+                    @Html.ActionLink("Create New Product", "Create")<br />
+                </td>
+            </tr>
+        }
     }
-}
+    @Html.ActionLink("Back to list", "IndexU", "Home")
 
 </table>
